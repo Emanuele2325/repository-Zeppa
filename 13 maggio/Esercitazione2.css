@@ -1,0 +1,150 @@
+.pagina {
+    display: grid;
+ 
+    grid-template-areas:
+        "header"
+        "center"
+        "footer";
+    /* Definizione delle aree con nome */
+ 
+    grid-template-rows: 80px 1fr 60px;
+    /*definisce le altezze delle righe */
+
+   
+    grid-template-columns: 100%;
+    /* Larghezza unica colonna: 100% */
+ 
+    gap: 10px;
+    /* gap = spazio tra le celle della griglia */
+}
+
+.header {
+    grid-area: header;             
+    /* assegna all'area "header" della griglia */
+ 
+    background-color: blue;
+    color: white;
+    padding: 0 2rem;               
+    /* spazio interno: 0 sopra/sotto, 2rem dx/sx */
+ 
+    display: flex;
+    /* --- FLEXBOX --- */
+ 
+    justify-content: space-between;
+    /*  mette il logo a sinistra e la nav a destra */
+
+    align-items: center;
+    /*centra verticalmente il contenuto nell'header */
+}
+ 
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+
+}
+
+
+.center {
+    grid-area: center;           
+    /* assegna all'area "center" */
+ 
+    display: grid;
+    grid-template-columns: 200px 1fr;  
+    /* sidebar fissa, contenuto flessibile */
+    gap: 10px;                     
+    /* spazio tra sidebar e contenuto (px) */
+ 
+    padding: 10px;
+}
+
+
+
+/* Link della navigazione */
+.navigazione a {
+    color: white;
+    text-decoration: none;
+}
+ 
+.sidebar {
+    background-color: white;
+    border: 1px solid white;
+    padding: 20px;                 
+    /* spazio interno (px) */
+}
+ 
+.sidebar h3 {
+    margin-bottom: 15px;
+    color: #1a1a2e;
+    font-size: 1rem;
+}
+ 
+.sidebar ul {
+    list-style: none;              
+    /* rimuove i pallini della lista */
+}
+ 
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+ 
+.sidebar ul li a {
+    text-decoration: none;
+    color: #black;
+}
+ 
+.sidebar ul li a:hover {
+    color: #red;
+}
+
+
+.contenuto {
+    background-color: #white;
+    border: 1px solid #white;
+    padding: 30px;                 
+    /* spazio interno */
+ 
+    position: relative;
+    /* Necessario per il posizionamento del badge */
+}
+ 
+.contenuto h2 {
+    margin-bottom: 15px;
+    color: #black;
+}
+ 
+.contenuto p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;                     
+    /* distanza dal bordo superiore (px) */
+    right: 15px;                   
+    /* distanza dal bordo destro (px) */
+ 
+    background-color: #red;
+    color: #red;
+    padding: 5px 12px;             
+    /* spazio interno (px) */
+    font-size: 0.75rem; 
+    font-weight: bold;
+}
+
+.footer {
+    grid-area: footer;             
+    /* assegna all'area "footer" della griglia */
+ 
+    background-color: #darkblue;
+    color: #ffffff;
+ 
+    /* Flexbox per centrare il testo dentro il footer */
+    display: flex;
+    justify-content: center;       
+    /* centra orizzontalmente */
+    align-items: center;           
+    /* centra verticalmente */
+ 
+    font-size: 0.85rem;
+}

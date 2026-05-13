@@ -1,0 +1,189 @@
+/* Primo paragrafo - colore blu */
+p {
+
+  color: blue;
+
+}
+
+/* Secondo paragrafo - colore rosso */
+p {
+
+  color: red;
+
+}
+
+div {
+
+  color: green;
+
+}
+/* ereditarietà è ultimo. Solo se l'elemento non ha nulla; a salire, Generic ha la priorità. */
+/* vengono influenzati solo gli elementi che non si contraddicono, Gli ordini vengono rispettati solo se identici */
+
+p {
+
+  color: blue;
+
+}
+
+
+.testo {
+
+  color: orange;
+
+}
+
+
+#titolo {
+
+  color: red;
+
+}
+
+/* ID - CLASSE - GENERIC: è questa la strutturazione di priorità. In questo caso .testo è una classe, #titolo è un ID e p è un 
+elemento generico.*/
+
+body {
+
+  background-color: #f0f0f0;
+
+  font-family: Arial, sans-serif;
+
+}
+
+
+body { 
+
+  background-color: #f0f0f0;
+
+  font-family: Arial, sans-serif;
+
+}
+
+/* commento: nella sezione body, modifico colore sfondo (con il codice #f0f0f0), e inoltre modifico il font-family con il tipo di carattere
+ */
+
+
+.box {
+/* creazione classe box  */
+  background-color: white;
+
+  padding: 20px;
+
+}
+
+
+h1 {
+/* sezione titoli, il primo */
+  color: #2c3e50;
+
+  font-size: 2rem;
+
+  line-height: 1.2;
+
+}
+
+
+p {
+/* sezione generale  */
+  color: rgb(80, 80, 80);
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+
+}
+
+
+.esempio{
+
+  width: 200px;
+
+  height: 100px;
+
+  background-color: lightblue;
+
+}
+
+
+.ProvaPadding{
+
+  padding: 20px;
+
+  background-color: lightgreen;
+
+}
+
+/* sezione padding, creando una classe */
+
+div {
+
+  border: 5px solid black;
+
+}
+/* In questo esempio, viene applicato un bordo solido nero di 5px che
+racchiude content e padding. */
+
+div {
+
+  margin: 30px;
+
+}
+
+/* viene definito lo spazio di tipo ESTERNO tra l'elemento e gli altri di elementi circostanti. 
+In questo caso, lo spazio è di 30px su tutti i lati, separando elemento <div> dagli altri elementi presenti nel Layout, tipo un elemento 
+separato da <div> è l'elemento p oppure h1*/
+
+
+
+
+.contenitore {
+  position: relative;
+
+  width: 300px;
+
+  height: 200px;
+
+  background-color: lightgray;
+
+}
+
+
+.box {
+
+  position: absolute;
+
+  top: 20px;
+
+  left: 30px;
+
+  width: 100px;
+
+  height: 50px;
+
+  background-color: coral;
+
+}
+
+.container {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 10px;
+
+}
+
+
+.item {
+
+  background-color: steelblue;
+
+  color: white;
+
+  padding: 20px;
+
+  text-align: center;
+
+}

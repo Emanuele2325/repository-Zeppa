@@ -1,0 +1,107 @@
+/*
+   SELETTORE PER TAG: body
+   Si applica all'intera pagina.
+   Unità usata: rem (relativa al font base del browser)
+*/
+body {
+    font-family: Georgia, serif;   /* tipografia del testo */
+    font-size: 1rem;               /* 1rem = 16px di default */
+    line-height: 1.6;              /* interlinea */
+    background-color: #f5f5f0;    /* sfondo */
+    color: #222222;                /* colore testo generale */
+    margin: 0;                     /* rimuove margine default del browser */
+    padding: 2rem;                 /* spazio interno: unità rem */
+}
+ 
+ 
+/* 
+   SELETTORE PER TAG: h1
+   Stile del titolo h1, ovverosia il principale.
+   Unità usata: em (relativa al font-size del genitore)
+ */
+h1 {
+    font-size: 2.5em;              /* 2.5 volte il font-size di body */
+    color: #1a1a2e;                /* blu */
+    margin-bottom: 0.5em;          /* margine sotto: unità em */
+}
+ 
+ 
+/*
+   SELETTORE PER ID: #introduzione
+   L'# indica un ID. Si applica a UN solo elemento.
+   Ha specificità più alta rispetto alle classi.
+*/
+#introduzione {
+    width: 80%;  /* occupa l'80% della larghezza disponibile */
+    font-size: 1.1rem;
+    color: #444444;
+    background-color: #ffffff;
+ 
+    /* BOX MODEL completo:
+       padding = spazio INTERNO tra testo e bordo
+       margin  = spazio ESTERNO tra questo elemento e gli altri
+    */
+    padding: 1rem 1.5rem;          /* 1rem sopra/sotto, 1.5rem destra/sinistra */
+    margin: 1.5rem 0;              /* 1.5rem sopra/sotto, 0 destra/sinistra */
+}
+ 
+
+ 
+/* 
+   SELETTORE PER CLASSE: .scheda
+   Il punto (.) indica una classe.
+   Può essere applicata a più elementi.
+
+*/
+.scheda {
+    background-color: #ffffff;
+    border: 2px solid #cccccc;     /* BOX MODEL: bordo solido grigio, 2px */
+    padding: 20px;                 /* BOX MODEL: spazio interno 20px */
+    margin: 20px 0;                /* BOX MODEL: spazio esterno 20px sopra/sotto */
+    width: 600px;                  /* larghezza fissa in px */
+}
+ 
+/* Stile per l'h2 DENTRO .scheda
+   Selettore discendente: si applica solo agli h2 figli di .scheda */
+.scheda h2 {
+    font-size: 1.3rem;
+    color: #1a1a2e;
+}
+ 
+ 
+/*
+   SELETTORE PER ID: #speciale
+   CONFLITTO DI CASCATA / SPECIFICITÀ:
+   Questo elemento ha anche la classe .scheda.
+   L'ID ha specificità più alta della classe,
+   quindi background-color qui VINCE, quindi ha precedenza rispetto a quello di .scheda.
+*/
+#speciale {
+    background-color: #fff3cd;     /* giallo: sovrascrive il bianco di .scheda */
+    border: 2px solid #e6a817;     /* bordo arancione: sovrascrive il grigio di .scheda */
+}
+ 
+ 
+/* 
+   SELETTORE PER CLASSE: .bottone
+   Stile base del link/bottone
+*/
+.bottone {
+    display: inline-block;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    text-decoration: none;         /* rimuove la sottolineatura del link */
+    font-size: 0.9rem;
+    border: 2px solid #1a1a2e;
+}
+ 
+ 
+/*
+   PSEUDO-CLASSE: .bottone:hover
+   Si attiva quando l'utente passa il mouse sopra.
+   Cambia colori invertendoli rispetto allo stato normale.
+*/
+.bottone:hover {
+    background-color: #e63946;     /*sfondo rosso*/
+}
+

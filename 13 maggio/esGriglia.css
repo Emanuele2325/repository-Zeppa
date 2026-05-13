@@ -1,0 +1,60 @@
+.container {
+
+  display: grid;
+
+ grid-template-columns: 100px 100px 
+100px;
+/* Qui definisco tre colonne larghe 100px ciascuna*/
+
+  grid-template-rows: 100px 100px;
+/* Qui definisco tre righe larghe 100px ciascuna*/
+  gap: 10px;
+
+}
+/*Spaziatura di 10px tra righe e colonn */
+
+
+.item1 {
+
+  grid-column: 1 / 3;
+
+  /* L'elemento occupa la colonna 1 e 2 (si estende fino alla 3) */
+  grid-row: 1;
+  /* Posizionato nella prima riga */
+}
+
+
+.item2 {
+
+  grid-column: 3;
+  /* L'elemento è nella terza colonna */
+
+  grid-row: 1 / 3;
+  /* Occupa la riga 1 e 2 (si estende fino alla 3) */
+}
+
+
+.container2 {
+
+  display: grid;
+
+  grid-template-areas:
+
+    "header header"
+    "sidebar content"
+    "footer footer";
+
+  grid-template-columns: 1fr 2fr;
+
+  gap: 10px;
+
+}
+
+
+.header { grid-area: header; }
+
+.sidebar { grid-area: sidebar; }
+
+.content { grid-area: content; }
+
+.footer { grid-area: footer; }

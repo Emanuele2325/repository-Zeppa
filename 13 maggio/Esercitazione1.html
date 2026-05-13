@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercitazione CSS</title>
+
+    <!-- Collegamento al foglio di stile esterno -->
+    <link rel="stylesheet" href="esercitazione1.css"> 
+</head>
+
+<body>
+
+    <!-- 
+         TITOLO PRINCIPALE h1
+     -->
+    <h1> Pagina di esercitazione</h1>
+
+    <!--
+         PARAGRAFO CON ID
+         Selettore per ID: #introduzione
+         L'ID è unico: si usa una sola volta per pagina
+        -->
+    <p id="introduzione">
+        Questo è il paragrafo introduttivo. Ha un ID chiamato "introduzione",
+        che nel CSS viene selezionato con il simbolo #.
+    </p>
+
+    <!-- 
+         CONTENITORE DIV CON CLASSE .scheda
+         PS. La classe può essere riutilizzata su più elementi
+    -->
+    <div class="scheda">
+        <h2>Prima scheda</h2>
+        <p>Questo div ha la classe "scheda". Nel CSS viene selezionato con il punto (.scheda).
+           Qui vediamo applicati: margin, padding, border e colori.</p>
+
+        <!-- Bottone con pseudo-classe :hover -->
+        <!-- Quando ci passi sopra con il mouse, cambia aspetto -->
+        <a href="#" class="bottone">Passa il mouse qui</a>
+    </div>
+
+    <!-- 
+         SECONDO DIV: stessa classe, stesso stile
+         Dimostra che la CLASSE si può riutilizzare
+    -->
+    <div class="scheda">
+        <h2>Seconda scheda</h2>
+        <p>Anche questo div ha la classe "scheda" e riceve automaticamente lo stesso stile CSS.
+           Questo dimostra il riutilizzo delle classi.</p>
+
+        <a href="#" class="bottone">Anche questo cambia al hover</a>
+    </div>
+
+    <!--
+         DIV CON ID: regola in conflitto con .scheda
+         Qui vediamo la SPECIFICITÀ della cascata CSS:
+         l'ID (#speciale) vince sulla classe (.scheda)
+         perché ha specificità più alta
+     -->
+    <div class="scheda" id="speciale">
+        <h2>Scheda speciale (conflitto cascata)</h2>
+        <p>Questo div ha sia la classe "scheda" che l'ID "speciale".
+           Il colore di sfondo definito dall'ID sovrascrive quello della classe,
+           dimostrando come funziona la specificità CSS.</p>
+    </div>
+
+</body>
+</html>
