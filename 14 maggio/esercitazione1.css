@@ -65,3 +65,33 @@ Larghezza pari all’80% del contenitore(cioè l’elemento padre della card, in
 testo allineato al centro
 position: relative;  Serve per posizionare correttamente lo pseudo-elemento ::after rispetto alla card.
 Anima i cambiamenti di trasformazione, con la transition*/
+
+.card::after {
+  content: "★";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: var(--colore-principale);
+  font-size: 1.5rem;
+}
+/* Selettore dello pseudo-elemento ::after della card: è un elemento “finto” aggiunto dopo il contenuto. 
+  content invece è il simbolo cui mostrare
+  il posizionamento, di tipo assoluto rispetto al contenitore e la distanza al cospetto del bordo superiore e a destra nel top e nel right
+  colore e dimensione del simbolo negli ultimi due*/
+
+  .card:hover {
+  transform: scale(1.05);
+}
+/* Stato al passaggio del mouse e il conseguente effetto di ingrandimento */
+
+footer {
+  background-color: var(--colore-principale);
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+}
+/* selettore per l'elemento footer, la riga finale riguardo al copyright: con unico colore, quello principale per dare coerenza
+spazio tra contenuto e bordo tramite padding, come una sorta di cuscinetto
+testo allineato al centro e il colore di tipo bianco */
+
+
