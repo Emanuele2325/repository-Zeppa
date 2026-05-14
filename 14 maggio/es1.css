@@ -1,0 +1,147 @@
+:root {
+/* :root --> la versione CSS di “globale”, il punto più alto dell’albero DOM */
+  --colore-principale: #3498db;
+
+  --colore-testo: #2c3e50;
+
+  --spaziatura: 20px;
+
+}
+/* tutto ciò che definisci lì dentro (come --colore-principale, --spaziatura, ecc.)
+può essere usato ovunque nel tuo foglio di stile. è molto comodo perché cambi un valore una sola volta e tutto il sito si aggiorna
+ */
+
+/* Se il CSS fosse una casa, :root sarebbe il quadro elettrico generale:
+cambi un interruttore lì e tutta la casa ne risente */
+
+
+.card {
+
+  background-color: var(--colore-principale);
+
+  padding: var(--spaziatura);
+
+  color: white;
+
+}
+
+/* La .card usa i valori delle variabili definite in :root:
+   - colore di sfondo = colore principale
+   - padding = spaziatura scelta
+   - testo bianco per contrasto */
+
+h1 {
+
+  color: var(--colore-testo);
+
+}
+
+/* L’h1 invece prende il colore del testo dalle variabili.
+   Così, cambiando una variabile, si aggiorna tutto automaticamente. */
+
+
+
+/* Questo codice crea delle variabili CSS (colori e spaziature)
+   dentro :root, così puoi riutilizzarle ovunque nel sito.
+   La card usa il colore principale e la spaziatura salvati sopra.
+   L’h1 invece prende il colore del testo definito nelle variabili.
+   Se cambi un valore in :root, tutto il resto si aggiorna da solo. */
+
+.messaggio::before {
+
+  content: "⚠ ";
+
+  color: red;
+
+}
+
+
+.messaggio::after {
+
+  content: " ✔";
+
+  color: green;
+
+}
+
+/* Questi due selettori aggiungono simboli prima e dopo ogni elemento
+   con classe .messaggio. 
+   ::before inserisce un avviso rosso (⚠) all’inizio,
+   ::after aggiunge un segno di conferma verde (✔) alla fine.
+   Questi contenuti vengono creati direttamente nel CSS, rappresentazioni VISIVE e non esistono realmente nel codice HTML. */ 
+
+
+.box {
+width: 100px;       
+height: 100px;
+background-color: steelblue;
+transition: transform 0.5s;
+animation: cambioColore 3s infinite;
+}
+
+/* Prendere tutti gli elementi HTML che hanno class="box" e applica queste regole
+Larghezza del box: 100 pixel.
+Altezza del box: 100 pixel. con relativo colore
+transition: “Quando cambi la proprietà transform, fallo in modo morbido, in mezzo secondo (0.5s), non di colpo 
+Applica l’animazione chiamata cambioColore, che:
+dura 3 secondi per un ciclo completo, ripetendosi all’infinito (infinite)*/
+
+.box:hover {
+transform: scale(1.2);
+}
+
+/* Significa: “Quando il mouse passa sopra un elemento con class="box", applica queste regole”.
+Scala (ingrandisce) il box del 20% (?), non ho compreso.
+Grazie alla transition definita prima, l’ingrandimento è graduale, non brusco. */
+
+
+
+@keyframes cambioColore {
+0% {
+background-color: steelblue;
+}
+
+50% {
+background-color: coral;
+}
+
+100% {
+background-color: steelblue;
+}
+}
+
+
+/*Qui riguarda invece l’animazione in animation: cambioColore 3s all'infinito;.
+
+@keyframes cambioColore { ... }  
+Dai un nome all’animazione: cambioColore.
+
+Dentro ci sono le “tappe” dell’animazione:
+
+0% { background-color: steelblue; }  
+All’inizio (0% del tempo), il colore è steelblue.
+
+50% { background-color: coral; }  
+A metà animazione (50%), il colore diventa coral (un arancione/rosa).
+
+100% { background-color: steelblue; }  
+Alla fine (100%), torna steelblue.
+*/
+
+.box1 {
+    display: block;
+    background-color: lightblue;
+}
+
+/* box1 viene visualizzato normalmente come blocco */
+.box2{
+    visibility: hidden;
+    background-color: lightgreen;
+}
+
+/* box2 è nascosto ma occupa spazio. Hidden = nascosto */
+.box3{
+    display: none;
+    background-color: coral;
+}
+/* box3 è completamente nascosto e non occupa spazio. None = non esiste */

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="esercitazione1.css">
+    </head>
+
+    <body>
+      <header> <!--  l'intestazione di una pagina o sezione -->
+        <h1> Gelateria Artigianale </h1>
+        <nav> <!--  la sezione di navigazione, con i link alle altre pagine del sito -->
+          <ul>   <!-- "senza un ordine numerico"-->
+            <li><a href="#gusti">Gusti</a></li>
+            <li><a href="#promo">Promozioni</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+            <!-- Dispone i link in linea, dove per la presenza di #parola, è legato all'ID dell'elemento -->
+            </ul>
+        </nav>
+       </header> 
+
+
+
+        <main> <!--  il contenuto principale della pagina -->
+            <section id="gusti">     <!--  divisione per blocchi tematici, gusti, promozioni. Ora preso "gusti", tra virgolette
+                per collegarlo al link del menù -->
+                <h2>I nostri gusti</h2>
+            <ul>    <!-- "senza un ordine numerico"-->
+                <li>Cioccolato</li> <!-- I vari elementi dei gusti presenti, non ordinati -->
+                <li>Vaniglia</li>
+                <li>Pistacchio</li>
+                <li>Fragola</li>
+            </ul>
+            </section>
+
+
+            <section id="promo" class="card">       <!--assegna una classe CSS per applicare uno stile specifico (la card promozionale).-->
+                <h2>Promo del mese</h2>
+                <p>Per ogni coppetta grande, un giocattolo in omaggio!</p>
+
+
+            </section>
+        </main>
+        
+        <footer> <!--Chiusura a piè di pagina -->
+        <p> 2026 Gelateria Artigianale. Tutti i diritti riservati</p> 
+
+        
+         </footer>
+    </body>
+</html>

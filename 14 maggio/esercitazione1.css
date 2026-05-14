@@ -1,0 +1,67 @@
+:root {
+  --colore-principale: #f8b400;
+}
+/* elemento radice del documento, root; con tanto di colore principale, un arancio caldo. Aperto e chiuso */
+
+body {
+  font-family: 'Arial', sans-serif; 
+  background-color: #fffaf0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* stile generale per il corpo del documento: font Arial, sfondo crema, testo grigio scuro, senza margini, ovvero lo spazio esterno
+che separa l'elemento dagli altri o padding, ovvero spazio interno tra contenuto e bordo */
+
+header {
+  background-color: var(--colore-principale);
+  padding: 1rem;
+  text-align: center;
+}
+/* Selettore che applica lo stile all’elemento selettore header;
+background-color: var(--colore-principale);  
+Usa la variabile definita prima per il colore di sfondo PS. Richiama la variabile CSS.
+
+padding: 1rem;  
+Aggiunge spazio interno (tutto intorno) al contenuto dell’header. Spazio interno uniforme
+
+text-align: center;  
+Centra orizzontalmente il testo dentro l’header. */
+
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+/* Togliere pallini e padding */
+nav li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+/* Metterle in orizzontale */
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+/* Stile del testo dei link */
+
+.card {
+  background-color: #fff;
+  border: 2px solid var(--colore-principale);
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 80%;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Prendere tutti gli elementi con la classe "card"; sfondo bianco; bordo spesso di 2px
+Spazio interno per far "respirare" il contenuto. 
+Margine verticale di 2rem, orizzontale automatico → centra la card. (non ho capito questo passaggio)
+Larghezza pari all’80% del contenitore(cioè l’elemento padre della card, in questo caso <main>).
+testo allineato al centro
+position: relative;  Serve per posizionare correttamente lo pseudo-elemento ::after rispetto alla card.
+Anima i cambiamenti di trasformazione, con la transition*/
