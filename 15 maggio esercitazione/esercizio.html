@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Esercitazione Test </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="esercizio.css">
+    </head>
+
+    <body>
+
+        <!-- Header: logo e navigazione -->
+        <header>
+           <img src="logo.jpg" alt="Logo Fioreria Zeppa" class="logo">
+           <h1> Fioreria Zeppa </h1>
+           <nav>
+                <ul>
+                    <li><a href="#Chi-siamo">Chi siamo</a></li>
+                    <li><a href="#Servizi">Servizi</a></li>
+                    <li><a href="#Contatti">Contatti</a></li>
+
+                    <!-- Si parte con header, ovvero la parte superiore della pagina, nella quale ho aggiunto il logo e il nome
+                     della fioreria 
+                     A seguito, ho aggiunto il menu di navigazione, coi punti non ordinati con il tag <ul>
+                        <lì> singola voce e riferimento e collegamento alle varie sezioni -->
+                </ul>
+           </nav>
+        </header>
+        
+        <!-- Sezione principale: presentazione e offerta -->
+         <main>
+
+            <section id="Chi-siamo">
+                <h2> Chi siamo</h2>
+                <p> Fioreria a carattere familiare, specializzata nella creazione di composizioni floreali per ogni occasione.</p>
+            </section>
+
+            <section id="servizi">
+                <h2>I nostri servizi</h2>
+                <ul>
+                    <li> Composizioni per matrimoni</li>
+                    <li> Composizioni per eventi</li>
+                    <li> Composizioni per disposizioni funebri</li>
+                </ul>
+            </section>
+
+            <!-- sezione contenuto principale con relativa sezione logica dei contenuti e servizi offerti, con <ul> elenco non ordinato
+                e <li> i vari servizi e infine la sezione dei contatti -->
+
+            <!-- Form di contatto -->
+                <section id="contatti">
+                    <h2>Contattaci</h2>
+                    <form action="#" method="post">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+
+                    <label for="messaggio">Messaggio:</label>
+                    <textarea id="messaggio" name="messaggio" rows="4" required></textarea>
+
+                    <button type="submit">Invia</button>
+                    <!-- In questa sezione, creato un modulo per inviare dati, con metodo POST.
+                     Successivamente, le etichette: dapprima per il nome, compilando e legando con input id "nome"; successivamente
+                     etichette per l'email e il messaggio: tutte impostate con required, ovvero obbligatorie.
+                     Infine area più grande per il messaggio, impostato a grandezza 4 righe e il relativo pulsante di invio -->
+
+
+                </form>
+                </section>
+                </main>
+
+                <!-- Footer: informazioni finali -->
+                 <footer>
+                    <p> 2026 Fiorario Zeppa - Tutti i diritti riservati </p>
+                </footer>
+    </body>
+</html>

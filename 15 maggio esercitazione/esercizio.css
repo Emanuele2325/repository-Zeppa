@@ -1,0 +1,110 @@
+/* Questo blocco definisce l’aspetto generale della pagina: font, colori, spazi.
+È la base su cui tutto il resto si appoggia. */
+
+body {
+  font-family: Arial, sans-serif;      /*Imposta il font generale della pagina*/
+  margin: 0;                           /*Rimuove il margine fuori dal box*/
+  padding: 0;                          /*Rimuove lo spazio tra contenuto e bordo*/
+  line-height: 1.6;                    /*Aumenta la leggibilità del testo*/
+  background-color: #f8f8f8;         /*Colore di sfondo chiaro per contrastare le sezioni bianche */
+  color: #333;                       /*Colore del testo principale*/
+}
+
+
+/*Sezione HEADER: logo, titolo e navigazione*/
+header {
+  background-color: #4caf50;           /* Colore verde naturale, tema fioraio */
+  color: white;                        /* Testo bianco per contrasto */
+  padding: 20px;                         /* Spazio interno*/
+  display: flex;                         /* Allinea logo, titolo e menu sulla stessa riga */
+  align-items: center;                   /* Centra verticalmente al centro */
+  justify-content: space-between;        /* titolo e menu ai lati opposti */
+}
+
+/* Logo */
+.logo {
+  width: 60px;                         /*Ridimensiona il logo*/
+  height: auto;                        /*Mantiene le proporzioni originali*/
+  margin-right: 20px;                  /*Spazio tra logo e titolo*/
+}
+
+/* Titolo */
+h1 {
+  margin: 0;                           /*Rimuove margine*/
+  font-size: 1.8rem;                   /*Dimensione del titolo*/
+}
+
+/* Menu */
+nav ul {
+  list-style: none;                    /* Rimuove i pallini della lista */
+  margin: 0;                           /* Rimuove margini*/
+  padding: 0;                          /* Rimuove padding*/
+  display: flex;                       /* Dispone le voci del menu in orizzontale */
+  gap: 20px;                           /* Spazio tra le voci del menu */
+}
+
+nav a {
+  color: white;                      /* Link bianchi per coerenza con l’header */
+  text-decoration: none;               /* Rimuove la sottolineatura */
+  font-weight: bold;                   /* Rende il menu più leggibile */
+}
+
+nav a:hover {
+  text-decoration: underline;          /* Sottolinea al passaggio del mouse */
+}
+
+
+
+
+/*CONTENUTO PRINCIPALE */
+main {
+  padding: 20px;                       /* Spazio interno per distanziare dal bordo */
+}
+
+/*Ogni sezione*/
+section {
+  margin: 40px;                         /* Spazio tra una sezione e l’altra */
+  background: white;                  /* Sfondo bianco */
+  padding: 20px;                        /* Spazio interno */
+}
+
+/* Titoli delle sezioni */
+section h2 {
+  margin-top: 0;                      /*Evita spazio inutile sopra il titolo */
+  color: #4caf50;                   
+}
+
+
+/* FORM DI CONTATTO */
+form {
+  display: flex;          /*mette i campi uno sotto l'altro*/
+  flex-direction: column; /*ordine verticale*/
+  gap: 10px;              /*spazio tra i campi*/
+}
+
+input, textarea {
+  padding: 8px;           /*spazio interno per scrivere meglio*/
+  border: 1px solid #ccc; /*bordo semplice*/
+}
+
+button {
+  background-color: #4caf50; /*colore del pulsante*/
+  color: white;              /*testo bianco*/
+  padding: 8px;                /*spazio interno*/
+  border: none;                /*nessun bordo applicato*/
+}
+
+button:hover {
+  background-color: #45a049; /* colore un po' più scuro quando ci passi sopra */
+}
+
+
+
+/* FOOTER, a piè di pagina */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
