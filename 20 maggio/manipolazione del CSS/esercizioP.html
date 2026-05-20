@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Esercizio Pomeridiano </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="esercizioP.css">
+    </head>
+    <body>
+
+        <!-- Titolo principale -->
+        <h1 id="titolo">Titolo iniziale</h1>    <!-- Titolo modificabile con JavaScript -->
+
+        <!-- Div con testo -->
+        <div id="testo">
+        <p>Questo è un testo di esempio.</p>    <!-- Paragrafo dentro il div -->
+        </div>
+
+        <!--  Campo input -->
+        <input type="text" id="inputTesto" placeholder="Scrivi qui..."> <!-- Dove l'utente scrive -->
+
+        <!--  Bottoni -->
+        <button id="btnAggiungi">Aggiungi elemento</button> <!-- Aggiunge un nuovo <li> -->
+        <button id="btnModifica">Modifica titolo</button> <!-- Cambia il testo del titolo -->
+        <button id="btnElimina">Elimina ultimo elemento</button> <!-- Rimuove l'ultimo <li> -->
+
+        <!--  Lista -->
+        <ul id="lista"></ul> <!-- Lista vuota che si riempirà con gli <li> -->
+
+        <!--  Contatore -->
+        <p id="contatore">Elementi: 0</p> <!-- Mostra quanti elementi ci sono nella lista -->
+        
+        <script src="esercizioP.js" ></script>
+    </body>
+</html>

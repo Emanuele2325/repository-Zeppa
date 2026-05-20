@@ -1,0 +1,42 @@
+/*BLOCCO 7: Cambiare il colore del titolo */
+#titolo {   
+  color: blue; /* cambio il colore del testo del titolo in blu */
+}
+/*  Questo blocco modifica il colore del titolo principale.
+   La proprietà color cambia il colore del testo. */
+
+
+/*BLOCCO 8: Cambiare il colore di sfondo del div */
+#testo {
+  background-color: lightyellow; /* imposto uno sfondo giallo chiaro */
+}
+/* Questo blocco cambia il colore di sfondo del div che contiene il testo.
+   La proprietà background-color definisce il colore dietro al contenuto. */
+
+
+/*BLOCCO 9:  Aumentare la dimensione del testo */
+#testo p {
+  font-size: 20px; /* aumento la dimensione del testo dentro il paragrafo */
+}
+/* Questo blocco serve per ingrandire il testo del paragrafo.
+   La proprietà font-size controlla la grandezza dei caratteri. */
+
+
+/*BLOCCO 10: Aggiungere un bordo al div */
+#testo {
+  border: 2px solid black; /* aggiungo un bordo nero di 2px */
+}
+/* Questo blocco aggiunge un bordo visibile attorno al div.
+   La proprietà border definisce spessore, tipo e colore del bordo. */
+
+
+/*BLOCCO 11: Nascondere e mostrare un elemento */
+.nascosto {       /*prende gli elementi di classe nascosto*/
+  display: none; /* nasconde completamente l'elemento */
+}
+/* Questa classe serve per nascondere un elemento.
+
+
+   Quando viene aggiunta con js, l'elemento non è visibile.
+   display: none --> lo rimuove dal flusso della pagina. */
+
