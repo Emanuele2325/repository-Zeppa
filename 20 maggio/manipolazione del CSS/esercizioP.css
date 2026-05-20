@@ -34,9 +34,9 @@
 .nascosto {       /*prende gli elementi di classe nascosto*/
   display: none; /* nasconde completamente l'elemento */
 }
-/* Questa classe serve per nascondere un elemento.
+/* Questa classe serve per nascondere un elemento. */
 
 
-   Quando viene aggiunta con js, l'elemento non è visibile.
-   display: none --> lo rimuove dal flusso della pagina. */
+/*Quando viene aggiunta con js, l'elemento non è visibile.
+display: none --> lo rimuove dal flusso della pagina. */
 

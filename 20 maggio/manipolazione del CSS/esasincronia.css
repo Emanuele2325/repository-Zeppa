@@ -1,0 +1,26 @@
+/*Stile base della pagina*/
+body { /* Selettore del corpo della pagina */
+  font-family: Arial, sans-serif; /* font principale */
+  padding: 20px; /*spazio interno ai bordi della pagina */
+}
+
+/*Stile base dell'area di output*/
+.output { /* Selettore di classe per l'area di output */
+  margin-top: 20px; /* Spazio sopra l'area di output */
+  padding: 15px; /* Spazio interno dell'area di output */
+  border: 1px solid #ccc; /* Bordo grigio chiaro attorno all'area */
+  min-height: 50px; /* Altezza minima per non farla troppo piccola */
+}
+
+/*Classe di caricamento*/
+.loading { /* Classe applicata quando è in corso il caricamento */
+  background-color: #fff3cd; /* Sfondo giallo chiaro per indicare attesa */
+  color: #856404; /* Testo marrone per richiamare lo stato di avviso */
+}
+
+/*Classe di successo */
+.success { /* Classe applicata quando il caricamento è andato a buon fine */
+  background-color: #d4edda; /* Sfondo verde chiaro per indicare successo */
+  color: #155724; /* Testo verde scuro per leggibilità */
+  font-weight: bold; /* Rendo il testo in grassetto per evidenziarlo */
+}
