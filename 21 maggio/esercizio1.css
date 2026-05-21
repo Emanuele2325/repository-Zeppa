@@ -1,0 +1,20 @@
+/* Layout centrale della pagina */
+body { /* corpo della pagina */
+  font-family: Arial, sans-serif; /* font leggibile */
+  margin: 0; /* rimuovo margini predefiniti */
+  padding: 20px; /* spazio interno */
+  display: flex; /* uso flexbox */
+  flex-direction: column; /* disposizione verticale */
+  align-items: center; /* centro gli elementi orizzontalmente */
+}
+
+
+/* Card per ogni libro */
+.card { /* classe per ogni libro */
+  border: 1px solid white; /* bordo grigio chiaro */
+  padding: 10px; /* spazio interno */
+  margin: 10px; /* spazio tra le card */
+  width: 250px; /* larghezza fissa */
+  background-color: lightgreen; /* sfondo chiaro */
+
+}
