@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="esercizio1.css">
+    </head>
+    <body>
+        <h1 id="titoloLibreria">Libreria Digitale</h1>  
+        <!-- titolo principale con id per eventuale selezione JS.
+         Definisce il titolo principale della pagina. L’id servirà se vogliamo modificarlo o selezionarlo via JavaScript. -->
+       
+        <nav id="navigazione">
+            <!-- crea il contenitore del menu di navigazione principale. -->
+        <button id="hamburger">☰</button> 
+         <!-- pulsante Menu (icona a tre linee) per aprire/chiudere il menu su mobile. -->
+        
+         <ul id="vociNavigazione">
+            <!-- crea il contenitore nella quale conterrà una lista di elementi non ordinati -->
+
+           <li><a href="#">Catalogo Libri</a></li> <!-- elenco dei libri -->
+           <li><a href="#">Aggiungi Libro</a></li> <!-- sezione per inserire nuovi libri -->
+           <li><a href="#">Chi Siamo</a></li> <!-- informazioni sulla libreria -->
+         </ul>
+         </nav>
+        
+         <!-- BLOCCO 3 — Paragrafo introduttivo -->
+         <p id="intro"> 
+        <!-- paragrafo introduttivo --> Benvenuto nella libreria digitale! Inserisci i tuoi libri preferiti e visualizzali in una lista.
+        </p>
+
+        <!-- BLOCCO 4: Form per inserire un libro -->
+       <form id="formLibro"> <!-- form principale per aggiungere un libro -->
+
+        <!--Sotto-blocco 1: Titolo del libro -->
+        <label for="titolo">Titolo:</label> <!-- etichetta per campo titolo -->
+        <input type="text" id="titolo" required> <!-- campo di testo obbligatorio. PS. required lo rende obbligatorio come scritta all'utente-->
+        <!-- concettualmente, Il valore di for deve essere uguale all’id dell’input: cosi,
+         crea un collegamento logico tra etichetta e campo -->
+
+
+        <!-- Sotto-blocco 2: Autore -->
+         <label for="autore">Autore:</label>
+         <input type="text" id="autore" required>
+
+         <!--Sotto-blocco 3: Genere -->
+         <label for="genere">Genere:</label>
+         <input type="text" id="genere">
+
+         <!-- Sotto-blocco 4: Anno di pubblicazione -->
+          <label for="anno">Anno:</label>
+          <input type="number" id="anno">
+
+          <!--  Sotto-blocco 5: Breve descrizione -->
+           <label for="descrizione">Descrizione:</label>
+           <textarea id="descrizione"></textarea>
+           <button type="submit" id="btnAggiungi">Aggiungi Libro</button> <!-- bottone per inviare il form -->
+</form>
+
+<!-- BLOCCO 5: Contenitore dei libri aggiunti -->
+        <div id="contenitoreLibri"> <!-- area dove verranno aggiunte le card -->
+        <!-- Le card dei libri verranno create dinamicamente da JavaScript -->
+        </div>
+
+
+
+        <script src="esercizio1.js" ></script>
+    </body>
+</html>
