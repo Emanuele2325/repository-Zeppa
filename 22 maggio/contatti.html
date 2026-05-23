@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="test1.css">
+    </head>
+    <body>
+
+
+    <header>
+        <nav id="navContainer">
+
+        <div class="logo_container">
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="Logo Centro Adozioni"></a>
+        </div>
+
+        <div id="nav_link">
+        <a href="index.html">Home</a>
+        <a href="adozioni.html">Adozioni</a>
+        <a href="contatti.html">Contatti</a>
+        </div>
+    </nav>
+    </header>
+
+    <!-- BLOCCO 2: Form contatti -->
+<section id="contatti"> <!-- sezione dedicata al form contatti: pagina dedicata al contatto con il centro adozioni.-->
+<h1>Richiedi informazioni o adotta un cane</h1> <!-- titolo principale della pagina -->
+
+<form id="formContatti"> <!-- modulo che l’utente compila -->
+    
+    <label for="nome">Nome:</label> <!-- etichetta collegata al campo nome; dice all’utente di scrivere il nome. *for="nome" serve per collegare etichetta label all'input -->
+    <input type="text" id="nome" required> <!-- campo di testo obbligatorio (required) -->
+
+    <label for="email">Email:</label> <!-- etichetta collegata al campo email -->
+    <input type="email" id="email" required> <!-- campo email con validazione -->
+
+    <label for="messaggio">Messaggio:</label> <!-- etichetta collegata alla textarea -->
+    <textarea id="messaggio" required></textarea> <!-- area di testo obbligatoria, con textarea che crea la casella e id identifica il messaggio -->
+
+    <button type="submit" id="btnInvia">Invia richiesta</button> <!-- bottone per inviare il form -->
+</form>
+</section>
+
+<!-- In questo blocco si ha la pagina dedicata al contatto con il centro adozioni.
+La sezione contiene un form mediante tre campi obbligatori: nome, email e messaggio.
+Ogni campo ha una label collegata tramite l’attributo for, e il bottone finale invia il form.
+Questa pagina permette all’utente di comunicare con il centro per informazioni o richieste di adozione. -->
+
+
+    <!-- BLOCCO 3: Footer -->
+    <footer>
+    <p>&copy; Adozioni Canine</p>
+    </footer>
+
+
+        <script src="test1.js"></script>
+    </body>
+</html>

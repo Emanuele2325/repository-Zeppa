@@ -1,0 +1,213 @@
+/* BLOCCO 1: STILI GENERALI DEL SITO */
+
+body {
+  font-family: Arial, sans-serif; /* font semplice e leggibile */
+  margin: 0; /* rimuove margini predefiniti */
+  padding: 0; /* rimuove padding predefinito */
+  background-color: #f9f9f9; /* sfondo chiaro */
+  color: #333; /* colore del testo */
+}
+
+h1, h2 {
+  margin: 0; /* rimuove margini predefiniti */
+  padding: 0;
+}
+
+
+/* BLOCCO 2: HEADER E MENU DI NAVIGAZIONE */
+
+header {
+  background-color: #222; /* sfondo scuro */
+  color: white; /* testo bianco */
+  padding: 15px 0; /* spazio interno */
+}
+
+#navContainer {
+  display: flex; /* allinea logo e link su una riga */
+  justify-content: space-between; /* logo a sinistra, link a destra */
+  align-items: center; /* allineamento verticale */
+  max-width: 1200px; /* larghezza massima */
+  margin: 0 auto; /* centra il contenitore */
+  padding: 0 20px; /* spazio laterale */
+}
+
+.logo_container img {
+  width: 100px; /* dimensione logo */
+  height: auto; /* mantiene proporzioni */
+}
+
+#nav_link a {
+  color: white; /* colore testo link */
+  text-decoration: none; /* rimuove sottolineatura */
+  margin-left: 20px; /* spazio tra i link */
+  font-weight: bold; /* testo più visibile */
+  transition: color 0.3s; /* effetto hover */
+}
+
+#nav_link a:hover {
+  color: #ffcc00; /* colore evidenziato */
+}
+
+
+/* BLOCCO 3: SEZIONE INTRO DELLA HOMEPAGE */
+
+#intro {
+  text-align: center; /* centra il contenuto */
+  padding: 50px 20px; /* spazio interno */
+  background-color: #fff; /* sfondo bianco */
+  border-bottom: 1px solid #ddd; /* separatore */
+}
+
+#intro h1 {
+  font-size: 30px; /* titolo grande */
+  margin-bottom: 10px;
+}
+
+#intro p {
+  font-size: 18px; /* testo leggibile */
+  color: #555; /* colore più morbido */
+}
+
+/* BLOCCO 4: SEZIONE PRESENTAZIONE DELLA HOMEPAGE */
+
+#presentazione {
+  max-width: 800px; /* larghezza massima */
+  margin: 40px auto; /* centra la sezione */
+  text-align: center; /* centra il testo */
+  padding: 20px;
+}
+
+#presentazione h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#presentazione p {
+  font-size: 16px;
+  color: #444;
+}
+
+
+/* BLOCCO 5: CARD DEI CANI (PAGINA ADOZIONI) */
+
+#listaCani {
+  text-align: center; /* centra il titolo */
+  padding: 40px 20px;
+}
+
+#contenitoreCani {
+  display: flex; /* card affiancate */
+  flex-wrap: wrap; /* vanno a capo se serve */
+  justify-content: center; /* centra le card */
+  gap: 20px; /* spazio tra card */
+  margin-top: 30px;
+}
+
+.cardCane {
+  background-color: white; /* sfondo card */
+  border: 1px solid #ddd; /* bordo leggero */
+  border-radius: 8px; /* angoli arrotondati */
+  padding: 20px; /* spazio interno */
+  width: 250px; /* larghezza card */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* ombra leggera */
+  text-align: left; /* testo allineato a sinistra */
+}
+
+.cardCane h2 {
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.cardCane p {
+  margin: 5px 0;
+  color: #555;
+}
+
+
+/* BLOCCO 6: FORM CONTATTI */
+
+#contatti {
+  max-width: 600px; /* larghezza massima */
+  margin: 40px auto; /* centra la sezione */
+  padding: 20px;
+  text-align: center;
+}
+
+#contatti h1 {
+  margin-bottom: 20px;
+}
+
+#formContatti {
+  display: flex; /* layout verticale */
+  flex-direction: column;
+  gap: 15px; /* spazio tra i campi */
+}
+
+#formContatti label {
+  text-align: left; /* allinea le label */
+  font-weight: bold;
+}
+
+#formContatti input,
+#formContatti textarea {
+  padding: 10px; /* spazio interno */
+  border: 1px solid #ccc; /* bordo leggero */
+  border-radius: 5px; /* angoli arrotondati */
+  font-size: 16px;
+}
+
+#formContatti textarea {
+  height: 120px; /* altezza maggiore */
+  resize: vertical; /* permette di allungare */
+}
+
+#btnInvia {
+  background-color: #222; /* sfondo scuro */
+  color: white; /* testo bianco */
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; /* cursore a mano */
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#btnInvia:hover {
+  background-color: #444; /* colore hover */
+}
+
+
+/* BLOCCO 7: FOOTER */
+
+footer {
+  background-color: #222; /* sfondo scuro */
+  color: white; /* testo bianco */
+  text-align: center; /* centra il testo */
+  padding: 15px 0;
+  margin-top: 40px; /* distanzia dal contenuto */
+  font-size: 14px;
+}
+
+
+/* BLOCCO 8: RESPONSIVE DESIGN PER SCHERMI PICCOLI */
+
+@media (max-width: 768px) {
+
+  #navContainer {
+    flex-direction: column; /* logo sopra, link sotto */
+    gap: 10px;
+  }
+
+  #contenitoreCani {
+    flex-direction: column; /* card una sotto l'altra */
+    align-items: center;
+  }
+
+  .cardCane {
+    width: 90%; /* card più larghe su mobile */
+  }
+
+  #formContatti {
+    width: 100%;
+  }
+}
