@@ -1,3 +1,9 @@
+// Aspetta che la pagina sia completamente caricata
+window.addEventListener("DOMContentLoaded", function() {
+
+
+
+
 // BLOCCO 1 — Selettori del DOM
 // Questo blocco collega il JavaScript agli elementi HTML delle tre pagine.
 // Ogni elemento viene selezionato SOLO se esiste nella pagina corrente.
@@ -47,21 +53,14 @@ const unavailableToys = document.getElementById("unavailableToys");
 // Questa funzione legge la chiave "toys" dal localStorage.
 // Se non esiste ancora, restituisce un array vuoto.
 function getToysArray() {
-const saved = localStorage.getItem("toys");     
-//localStorage è una memoria del browser che salva coppie chiave/valore.
-//getItem("toys") chiede: “Hai qualcosa salvato con la chiave "toys"?”
-//Legge la stringa JSON salvata nel localStorage
+  const saved = localStorage.getItem("toys");
 
-
-return saved ? JSON.parse(saved) : [];  //JSON.parse(saved) converte la stringa JSON in un array di oggetti JavaScript.
-  // Se esiste → deserializza con JSON.parse()
-  // Se non esiste → restituisce array vuoto
+  if (saved) {
+    return JSON.parse(saved);
+  } else {
+    return [];
+  }
 }
-//Ci sono due casi: - Se esiste, restituisce una stringa JSON; - non esiste, restituisce Null. 
-
-
-
-
 
 // BLOCCO 3: Salvataggio dell'array nel localStorage
 // Trasforma l'array in JSON e lo salva nella chiave "toys".
@@ -83,17 +82,17 @@ function addToy() {
   const toy = {
     nome: toyName.value,
     categoria: toyCategory.value,
-    prezzo: parseFloat(toyPrice.value),
+    prezzo: parseFloat(toyPrice.value), //parseFloat converte la stringa in un numero decimale
     eta: toyAge.value,
     disponibilita: toyAvailability.value
   };
-// Stai costruendo un “record” di un giocattolo, con tutte le sue proprietà.
+// Stai costruendo un “record” di un giocattolo, con tutte le sue proprietà presenti nei vari ID di inserimento HTML.
 
 const toys = getToysArray();
 //Recupero dell’array esistente
 //Qui richiami la funzione del BLOCCO 2: 
 //se ci sono già giocattoli → ottieni l’array
-//se non c’è niente → ottieni []
+//se non c’è niente → ottieni [] --> Null 
 
 toys.push(toy);
 //push() è un metodo degli array.
@@ -105,7 +104,7 @@ saveToysArray(toys);
 //serializza l’array
 //lo salva nel localStorage
 
-alert("Giocattolo salvato!");   ////Messaggio di conferma
+alert("Giocattolo salvato!");   //Messaggio di conferma
 }
 
 
@@ -122,80 +121,167 @@ function clearForm() {
 
 
 
+
+
 // BLOCCO 6 — Visualizzazione elenco giocattoli
-// Questa funzione viene eseguita nella pagina elenco.html.
+// Scopo: leggere i giocattoli salvati nel localStorage e mostrarli come card HTML nella pagina elenco.html.
+// Se non siamo in quella pagina, la funzione esce subito senza fare nulla.
+// Se non ci sono giocattoli, mostra un messaggio.
+// Se ci sono, crea una card HTML per ognuno e la inserisce nella pagina.
 
 function loadToyList() {
-  if (!toyList) return;
 
-//toyList è l’elemento con id="toyList" (solo in elenco.html).
-//Se sei in un’altra pagina, document.getElementById("toyList") è null.
-//if (!toyList) → se non esiste, esci.
-// Serve per usare lo stesso file JS su più pagine senza errori.
+  if (!toyList) {
+  // toyList è l'elemento con id="toyList", che esiste solo in elenco.html.
+  // !toyList significa: "se toyList NON esiste in questa pagina".
+  // Serve per evitare errori quando il file JS gira su index.html o riepilogo.html.
   
-const toys = getToysArray();    //Recupera l’array dal localStorage (giocattoli). Qui avviene la deserializzazione (dentro getToysArray())
+    return;
+    // Esci dalla funzione immediatamente. Non eseguire nient'altro.
+  }
 
+  const toys = getToysArray();
+  // Chiama la funzione del Blocco 2.
+  // Legge il localStorage e restituisce l'array dei giocattoli salvati.
+  // Se non c'è nulla salvato, restituisce un array vuoto [].
 
-if (toys.length === 0) {
-  toyList.innerHTML = "<p>Nessun giocattolo salvato.</p>";
-  return;
+  if (toys.length === 0) {
+  // toys.length è il numero di elementi nell'array.
+  // Se è 0, l'array è vuoto: non ci sono giocattoli da mostrare.
+  
+    toyList.innerHTML = "<p>Nessun giocattolo salvato.</p>";
+    // Scrive direttamente nell'HTML del contenitore un paragrafo di testo.
+    // L'utente vedrà: "Nessun giocattolo salvato."
+    
+    return;
+    // Esci dalla funzione. Non ha senso continuare se non c'è nulla.
+  }
+
+  toys.forEach(toy => {
+  // Scorre l'array uno ad uno.
+  // Ad ogni iterazione, toy è il giocattolo corrente (un oggetto con nome, categoria, ecc.).
+
+    const div = document.createElement("div");
+    // Crea un nuovo elemento <div> in memoria (non è ancora nella pagina).
+
+    div.className = "toy-card";
+    // Assegna al div la classe CSS "toy-card".
+    // Serve per applicare lo stile definito nel CSS.
+
+    div.innerHTML = "<h3>" + toy.nome + "</h3>" +
+                    "<p>Categoria: " + toy.categoria + "</p>" +
+                    "<p>Prezzo: €" + toy.prezzo.toFixed(2) + "</p>" +
+                    "<p>Età consigliata: " + toy.eta + "</p>" +
+                    "<p>Disponibilità: " + toy.disponibilita + "</p>";
+    // Riempie il div con l'HTML della card.
+    // toy.nome, toy.categoria ecc. sono le proprietà dell'oggetto giocattolo.
+    // toFixed(2) formatta il prezzo con esattamente 2 decimali (es. 19.90).
+    // Le stringhe vengono unite con + (concatenazione).
+
+    toyList.appendChild(div);
+    // Inserisce il div appena creato dentro il contenitore toyList nella pagina.
+    // Questo lo rende visibile all'utente.
+  });
 }
-//Gestione caso vuoto: se l’array è vuoto, mostra un messaggio e esci.
-
-
-
-//Ciclo forEach per creare le card
-toys.forEach(toy => {
-  const div = document.createElement("div");
-  div.className = "toy-card";
-  div.innerHTML = `
-    <h3>${toy.nome}</h3>
-    <p>Categoria: ${toy.categoria}</p>
-    <p>Prezzo: €${toy.prezzo.toFixed(2)}</p>
-    <p>Età consigliata: ${toy.eta}</p>
-    <p>Disponibilità: ${toy.disponibilita}</p>
-  `;
-  toyList.appendChild(div);
-});
-}
-//forEach scorre ogni giocattolo dell’array.
-// Per ogni toy:crei un <div>
-// gli dai una classe CSS
-// gli inserisci dentro il contenuto HTML con i dati del giocattolo
-//lo appendi al contenitore toyList
-
 
 
 // BLOCCO 7 — Visualizzazione riepilogo
+// Domanda generale: "Quanti giocattoli ho? Quali categorie? Quanto costano in media? Quali non sono disponibili?"
+// Movimento: legge il localStorage, calcola le statistiche e le scrive nella pagina riepilogo.html.
+
 function loadSummary() {
-  if (!totalToys) return;
-//Stessa logica di prima:
-//totalToys esiste solo in riepilogo.html
-//Se sei in un’altra pagina, esci.
-totalToys.textContent = "Totale giocattoli: " + toys.length;
-//toys.length → numero di elementi nell’array -- > numero totale di giocattoli
-//textContent → scrive testo dentro il paragrafo
+
+  if (!totalToys) {
+  // Domanda: "Sono nella pagina giusta?"
+  // Se totalToys non esiste, non siamo in riepilogo.html → esci.
+    return;
+  }
+
+  const toys = getToysArray();
+  // getToysArray() legge il localStorage e restituisce l'array dei giocattoli.
+  // Domanda: "Cosa ho salvato finora?"
 
 
-const uniqueCategories = [...new Set(toys.map(t => t.categoria))];    //new Set() è una struttura che elimina i duplicati di un array
-categories.textContent = "Categorie: " + uniqueCategories.join(", "); //join unisce gli elementi dell’array in una stringa, separandoli con ", "
-//concettualmente: prendi tutte le categorie dei giocattoli, elimina i duplicati, e poi crea una stringa con tutte le categorie uniche 
-//separate da virgola.
-
-const avg = toys.reduce((sum, t) => sum + t.prezzo, 0) / toys.length;
-averagePrice.textContent = "Prezzo medio: €" + avg.toFixed(2);
-
-//reduce((sum, t) => sum + t.prezzo, 0)  
-// → parte da 0 e somma tutti i prezzi
-// es. 0 + 10 + 20 + 30 = 60 poi divide per toys.length  → media = somma / numero elementi
-//toFixed(2) formatta il numero con 2 decimali
-
-//giocattoli non disponibili
-const unavailable = toys.filter(t => t.disponibilita === "non disponibile");
-//filter() crea un nuovo array con solo gli elementi che rispettano la condizione.
-//Qui: tutti i giocattoli con disponibilita === "non disponibile".
+  //TOTALE 
+  totalToys.textContent = "Totale giocattoli: " + toys.length;
+  // length è una proprietà degli array: restituisce il numero di elementi.
+  // Domanda: "Quanti giocattoli ho in totale?"
+  // textContent scrive il risultato nel paragrafo HTML con id="totalToys".
 
 
+  //CATEGORIE UNICHE
+  const allCategories = toys.map(function(t) {
+    return t.categoria;
+  });
+  // map() scorre l'array e costruisce un nuovo array con un solo valore per ogni elemento.
+  // Domanda: "Quali categorie compaiono nei giocattoli salvati?" (anche con duplicati)
+  // Movimento: estrai solo il campo categoria da ogni giocattolo.
+
+  const uniqueCategories = [...new Set(allCategories)];
+  // new Set() è una struttura che accetta un array ed elimina automaticamente i duplicati.
+  // [...] (spread operator) riconverte il Set in un array normale.
+  // Domanda: "Quali categorie compaiono almeno una volta, senza ripetizioni?"
+
+  categories.textContent = "Categorie: " + uniqueCategories.join(", ");
+  // join(", ") unisce tutti gli elementi dell'array in una stringa separata da virgole.
+  // Domanda: "Come mostro le categorie in modo leggibile?"
+  // Movimento: scrivi il risultato nel paragrafo HTML con id="categories".
+
+
+  // --- PREZZO MEDIO ---
+  let somma = 0;
+  // Variabile contatore che parte da zero e accumula i prezzi.
+  // Domanda: "Qual è la somma totale di tutti i prezzi?"
+
+  for (let i = 0; i < toys.length; i++) {
+    somma = somma + toys[i].prezzo;
+    // Ad ogni iterazione prende il prezzo del giocattolo corrente e lo aggiunge alla somma.
+  }
+
+  const avg = somma / toys.length;
+  // Divide la somma per il numero di giocattoli.
+  // Domanda: "Qual è il prezzo medio?"
+
+  averagePrice.textContent = "Prezzo medio: €" + avg.toFixed(2);
+  // toFixed(2) è un metodo dei numeri: formatta con esattamente 2 decimali.
+  // Domanda: "Come mostro il prezzo medio in modo leggibile?"
+  // Movimento: scrivi il risultato nel paragrafo HTML con id="averagePrice".
+
+
+  // --- GIOCATTOLI NON DISPONIBILI ---
+  const unavailable = toys.filter(function(t) {
+    return t.disponibilita === "non disponibile";
+  });
+  // filter() scorre l'array e restituisce un nuovo array con solo gli elementi
+  // che rispettano la condizione indicata.
+  // Domanda: "Quali giocattoli hanno disponibilità = non disponibile?"
+  // Movimento: filtra e tieni solo quelli non disponibili.
+
+  unavailableToys.innerHTML = "";
+  // Svuota la lista HTML prima di riempirla.
+  // Movimento: pulisci il contenitore per evitare duplicati ad ogni chiamata.
+
+  for (let i = 0; i < unavailable.length; i++) {
+    const li = document.createElement("li");
+    // createElement crea un nuovo elemento HTML <li> in memoria.
+    // Domanda: "Come creo una voce di lista per ogni giocattolo non disponibile?"
+
+    li.textContent = unavailable[i].nome;
+    // textContent scrive il nome del giocattolo dentro il <li>.
+    // Movimento: inserisci il testo nella voce di lista appena creata.
+
+    unavailableToys.appendChild(li);
+    // appendChild inserisce il <li> dentro la lista HTML con id="unavailableToys".
+    // Movimento: aggiungi la voce alla lista visibile in pagina.
+  }
+}
+
+
+// Test: verifica che il bottone venga trovato
+if (saveToyBtn) {
+  console.log("Bottone trovato, listener attivo");
+  saveToyBtn.addEventListener("click", addToy);
+}
 
 //BLOCCO 8: Event listeners e avvio logica
 if (saveToyBtn) saveToyBtn.addEventListener("click", addToy); //Se il pulsante esiste nella pagina: collega il click 
@@ -203,7 +289,6 @@ if (saveToyBtn) saveToyBtn.addEventListener("click", addToy); //Se il pulsante e
 if (clearFormBtn) clearFormBtn.addEventListener("click", clearForm);
 loadToyList();
 loadSummary();
-}
 
 //Vengono chiamate sempre, ma:
 //se non siamo nella pagina giusta, escono subito grazie ai if (!toyList) e if (!totalToys).
@@ -211,3 +296,4 @@ loadSummary();
 
 
 
+}); // ← chiude il listener DOMContentLoaded
