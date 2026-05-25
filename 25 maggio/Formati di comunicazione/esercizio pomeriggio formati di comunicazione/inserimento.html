@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it"> <!-- Imposta la lingua italiana per accessibilità e SEO -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Inserimento Giocattolo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="es2.css">
+    </head>
+    <body>
+
+<!-- Blocco 2: Intestazione -->
+<header> <!-- Sezione introduttiva della pagina -->
+<h1>Gestione Negozio di Giocattoli</h1> <!-- Titolo principale del sito -->
+<h2>Inserisci un nuovo giocattolo</h2> <!-- Sottotitolo specifico per questa pagina -->
+<p>Compila il form per aggiungere un giocattolo al catalogo. I dati verranno salvati nel browser.</p> <!-- Spiega lo scopo della pagina -->
+</header>
+
+<!-- Blocco 3: Contenuto principale -->
+<main> <!-- Contenuto principale della pagina -->
+<form id="toyForm"> <!-- Form identificato per essere gestito da JavaScript -->
+    
+    <label for="toyName">Nome giocattolo:</label> <!-- Etichetta collegata al campo nome -->
+    <input type="text" id="toyName" placeholder="Es. Macchinina rossa"> <!-- Campo testo per il nome del giocattolo -->
+    
+    <label for="toyCategory">Categoria:</label> <!-- Etichetta per la categoria -->
+    <input type="text" id="toyCategory" placeholder="Es. Peluche, Costruzioni, Elettronici"> <!-- Campo testo per la categoria -->
+    
+    <label for="toyPrice">Prezzo (€):</label> <!-- Etichetta per il prezzo -->
+    <input type="number" id="toyPrice" step="0.01" placeholder="Es. 19.99"> <!-- Campo numerico per il prezzo, con decimali -->
+    
+    <label for="toyAge">Età consigliata:</label> <!-- Etichetta per l'età consigliata -->
+    <input type="text" id="toyAge" placeholder="Es. 3+ anni"> <!-- Campo testo per l'età consigliata -->
+    
+    <label for="toyAvailability">Disponibilità:</label> <!-- Etichetta per la disponibilità -->
+    <select id="toyAvailability"> <!-- Menu a tendina per scegliere la disponibilità -->
+    <option value="disponibile">Disponibile</option> <!-- Opzione: il giocattolo è disponibile -->
+    <option value="non disponibile">Non disponibile</option> <!-- Opzione: il giocattolo non è disponibile -->
+    </select>
+    
+    <button type="button" id="saveToyBtn">Salva giocattolo</button> <!-- Pulsante che attiverà il salvataggio via JS -->
+    <button type="button" id="clearFormBtn">Pulisci form</button> <!-- Pulsante per svuotare i campi del form -->
+    
+</form>
+</main>
+
+<!-- Questo è il cuore della pagina: il form raccoglie tutti i dati necessari per rappresentare un giocattolo.
+Ogni campo ha un id che verrà usato da JS per leggere i valori e costruire l’oggetto da salvare in localStorage. -->
+
+
+<!-- Blocco 4: -->
+<nav> <!-- Barra di navigazione tra le pagine del sito -->
+<a href="elenco.html">Vai all'elenco dei giocattoli</a> <!-- Link alla pagina che mostra tutti i giocattoli salvati -->
+<a href="riepilogo.html">Vai al riepilogo</a> <!-- Link alla pagina che mostra le statistiche -->
+</nav>
+
+<!-- Permette di spostarsi dalle operazioni di inserimento alle pagine di visualizzazione e riepilogo. -->
+
+        <script src="es2.js" ></script>
+    </body>
+</html>

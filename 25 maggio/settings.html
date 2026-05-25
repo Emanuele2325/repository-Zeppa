@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="esMattina.css">
+    </head>
+    <body>
+
+<!-- BLOCCO 1: header della pagina -->
+<header>
+    <h1>Impostazioni</h1>
+</header>
+
+
+<!-- BLOCCO 2: Pannello di impostazioni -->
+<section id="settingsPanel"> 
+    <!-- modulo funzionale dell’app. In pratica, L'id="settingsPanel" permette:
+    - al CSS di stilare questa sezione come un pannello
+    - al JS di individuare quest’area se necessario
+    Concettualmente: è il “centro di controllo” dell’app. -->
+
+    <button id="themeBtn">Cambia tema</button> 
+    <!-- Pulsante per alternare tema chiaro/scuro.
+    Lo script deve selezionare questo pulsante con getElementById. 
+    Concettualmente: questo pulsante modifica l’aspetto dell’intera app -->
+
+    <button id="clearBtn">Cancella dati salvati</button> 
+    <!-- Pulsante che elimina i dati dal Local Storage.
+    Lo script deve selezionare questo pulsante con getElementById.
+    La dashboard tornerà senza dati precompilati
+    Concettualmente: questo pulsante “pulisce la memoria” dell’app. -->
+
+<!-- BLOCCO 3: Navigazione tra le pagine -->
+
+<nav> 
+<!-- Barra di navigazione tra le pagine dell’app.
+Serve per muoversi tra dashboard, profilo e impostazioni. -->
+
+<a href="index.html">Dashboard</a> 
+<!-- Link che riporta alla pagina principale dove si inseriscono i dati. -->
+
+<a href="profile.html">Profilo</a> 
+<!-- Link che porta alla pagina dove si visualizzano i dati salvati. -->
+</nav>
+
+
+
+        <script src="giochi.js"></script>
+    </body>
+</html>

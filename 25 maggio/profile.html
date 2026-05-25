@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="esMattina.css">
+    </head>
+    <body>
+
+<!-- BLOCCO 1: header della pagina -->
+<header> <!-- Sezione introduttiva della pagina -->
+<h1>Profilo salvato</h1>
+</header>
+
+<!-- BLOCCO 2 — Card che mostra i dati salvati -->
+
+<section id="profileCard"> <!-- Contenitore logico della card del profilo -->
+<div class="card"> <!-- Box grafico che conterrà i dati -->
+    
+    <h2 id="cardName"></h2> <!-- Qui JS inserirà il nome salvato nel Local Storage -->
+    <p id="cardGame"></p> <!-- Qui JS inserirà il gioco preferito -->
+    <p id="cardPlatform"></p> <!-- Qui JS inserirà la piattaforma preferita -->
+
+</div>
+</section>
+<!-- commento: con section, si separa logicamente la parte della pagina dedicata alla visualizzazione del profilo.
+A livello concettuale, questa sezione rappresenta il “risultato” del salvataggio effettuato nella dashboard.
+- Questo <div> è il contenitore VISIVO della card.
+Perché serve un div?
+- Perché <section> definisce il blocco logico, ma non quello grafico.
+- Il div con class="card" permette al CSS di applicare tutte le caratteristiche visive. 
+- <h2> Questo elemento NON contiene testo perché verrà popolato da JS. Lo script leggerà quel valore e lo inserirà qui con:
+document.getElementById("cardName").textContent = nomeSalvato
+*cosi come i due p successivi-->
+
+<!-- Questo blocco è il cuore della pagina profilo. Qui non raccolgo dati, ma mostro ciò che l’utente ha salvato nella dashboard. 
+Questi elementi sono vuoti perché:
+- la pagina non conosce i dati da sola
+- i dati sono salvati nel Local Storage
+- il file script.js li recupera e li inserisce dinamicamente-->
+
+
+<!-- In altre parole:
+La dashboard (index.html) raccoglie →
+il Local Storage conserva →
+il profilo (profile.html) mostra →
+le impostazioni (settings.html) modificano tema o cancellano i dati. -->
+
+<!-- BLOCCO 3: Barra di navigazione -->
+<nav> <!-- Barra di navigazione -->
+<a href="index.html">Torna alla Dashboard</a> <!-- Link per tornare alla pagina principale -->
+<a href="settings.html">Impostazioni</a> <!-- Link per andare alla pagina dei settaggi -->
+</nav>
+
+    <script src="giochi.js" async defer></script>
+    </body>
+</html>

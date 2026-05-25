@@ -1,0 +1,106 @@
+/* BLOCCO 1: Stili di base della pagina*/
+
+body {
+  margin: 0; /* Rimuove il margine di default del browser per evitare spazi indesiderati */
+  padding: 20px; /* Aggiunge spazio interno per non far toccare il contenuto ai bordi */
+font-family: Arial, sans-serif; 
+  background-color: #f5f5f5; /* Colore di sfondo chiaro per il tema base */
+color: #333; 
+transition: background-color 0.3s, color 0.3s; 
+  /* Aggiunge una transizione morbida quando cambia il tema */
+}
+
+/* base dell'app */
+
+/* BLOCCO 2: Tema scuro.
+Questo blocco si attiva quando JS aggiunge la classe "dark-mode" al body.
+Cambia colori, sfondi e testo per creare un tema scuro */
+
+body.dark-mode {
+  background-color: #1e1e1e; /* Sfondo scuro */
+  color: #e0e0e0; /* Testo chiaro per contrasto */
+}
+
+/*JS aggiunge la classe .dark-mode al body
+CSS applica automaticamente questi stili
+È il cuore del meccanismo “toggle theme”.*/
+
+/*BLOCCO 3: Stile dei contenitori principali*/
+
+header, nav, section {
+  margin-bottom: 20px; /* Aggiunge spazio tra i blocchi per separare visivamente le sezioni */
+}
+
+/* Senza margini, tutto sarebbe attaccato e difficile da leggere.*/
+
+/* BLOCCO 4 — Stile del form nella dashboard
+Migliora la leggibilità e l’usabilità dei campi input.*/
+
+form {
+  display: flex; /* Usa flexbox per impilare gli elementi */
+  flex-direction: column; /* Impila verticalmente label, input e pulsanti */
+  gap: 10px; /* Spazio uniforme tra gli elementi */
+  max-width: 300px; /* Limita la larghezza per evitare form troppo larghi */
+}
+
+/*gap è fondamentale per separare gli elementi senza usare margini singoli.*/
+
+/*BLOCCO 5: Stile degli input*/
+input {
+  padding: 8px; /* Spazio interno per rendere il campo più comodo */
+  border: 1px solid #ccc; /* Bordo leggero */
+  font-size: 14px; /* Dimensione testo */
+}
+
+/*BLOCCO 6: Stile dei pulsanti
+Rende i pulsanti coerenti e visivamente chiari.
+*/
+
+button {
+padding: 10px; /* Spazio interno */
+border: none; /* Rimuove il bordo di default */
+background-color: #007bff; 
+color: white; /* Testo bianco */
+cursor: pointer; /* Mostra la mano al passaggio del mouse */
+transition: background-color 0.3s; /* Effetto morbido al passaggio */
+}
+
+button:hover {
+  background-color: #0056b3; /* Colore più scuro al passaggio del mouse */
+}
+
+/* :hover --> si attiva solo quando il puntatore del mouse è sopra l’elemento.
+serve a:
+- dare un feedback visivo all’utente
+- far capire che il pulsante è cliccabile*/
+
+
+/* BLOCCO 7 — Stile della card del profilo
+Questa card mostra i dati salvati dall’utente. */
+
+.card {
+background-color: white; /* Sfondo chiaro */
+padding: 20px; 
+max-width: 300px; /* Larghezza massima */
+}
+
+/* BLOCCO 8 — Card in tema scuro
+Quando il body ha la classe dark-mode, anche la card cambia stile.
+*/
+
+body.dark-mode .card {
+  background-color: #2a2a2a; /* Sfondo scuro */
+  color: #f0f0f0; /* Testo chiaro */
+  box-shadow: 0 2px 6px rgba(255,255,255,0.1); /* Ombra chiara */
+}
+
+
+/* BLOCCO 9 — Stile della navigazione
+Rende i link più leggibili e distanziati.
+*/
+
+nav a {
+margin-right: 15px; /* Spazio tra i link */
+text-decoration: none; /* Rimuove la sottolineatura */
+color: #007bff; /* Colore blu coerente con i pulsanti */
+}

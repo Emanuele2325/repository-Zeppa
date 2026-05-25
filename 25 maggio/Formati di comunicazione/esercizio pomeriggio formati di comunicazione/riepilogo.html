@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it"> <!-- Imposta la lingua italiana per accessibilità e SEO -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Riepilogo Giocattoli</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="es2.css">
+    </head>
+    <body>
+
+<!-- Blocco 2: Intestazione -->
+<header> <!-- Sezione introduttiva -->
+<h1>Riepilogo Dati Giocattoli</h1> <!-- Titolo principale -->
+<p>Statistiche sui giocattoli salvati nel browser.</p> <!-- Spiega lo scopo della pagina -->
+</header>
+
+<!-- Blocco 3: Contenuto riepilogo -->
+<main> <!-- Contenuto principale -->
+<section id="summary"> <!-- Sezione che conterrà i dati di riepilogo -->
+    
+    <h2>Panoramica</h2> <!-- Sottotitolo per la sezione -->
+    
+    <p id="totalToys"></p> <!-- Qui JS scriverà il numero totale di giocattoli -->
+    <p id="categories"></p> <!-- Qui JS scriverà l'elenco delle categorie disponibili -->
+    <p id="averagePrice"></p> <!-- Qui JS scriverà il prezzo medio dei giocattoli -->
+    
+    <h3>Giocattoli non disponibili</h3> <!-- Sottotitolo per l'elenco dei non disponibili -->
+    <ul id="unavailableToys"></ul> <!-- Lista che JS riempirà con i nomi dei giocattoli non disponibili -->
+</section>
+</main>
+
+<!-- Commento blocco 3:  
+Questa sezione è il “cruscotto” analitico:
+#totalToys → conteggio
+#categories → categorie uniche
+#averagePrice → media prezzi
+#unavailableToys → elenco filtrato dei non disponibili
+JS leggerà l’array dal localStorage, calcolerà i valori e li scriverà qui. -->
+
+<!-- Blocco 4: Footer -->
+<nav> <!-- Barra di navigazione -->
+<a href="inserimento.html">Inserisci un nuovo giocattolo</a> <!-- Torna alla pagina di inserimento -->
+<a href="elenco.html">Vai all'elenco dei giocattoli</a> <!-- Vai alla pagina elenco -->
+</nav>
+
+
+        <script src="es2.js"></script>
+    </body>
+</html>

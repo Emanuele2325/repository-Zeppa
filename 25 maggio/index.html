@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="esMattina.css">
+    </head>
+
+<!-- Blocco 1: Titolo principale e descrizione -->
+    <body>
+<header> <!-- Sezione introduttiva -->
+<h1>🎮 Dashboard Videogiocatore</h1> <!-- Titolo principale della pagina -->
+<p>Personalizza il tuo profilo e salva le preferenze di gioco nel browser.</p> <!-- Breve descrizione del progetto -->
+</header>
+
+
+<!-- BLOCCO 2: Form per inserire dati -->
+<main> <!-- Contenuto principale -->
+    <form id="playerForm"> <!-- Form identificato per la gestione JS -->
+<label for="playerName">Nome giocatore:</label> <!-- Etichetta collegata al campo nome -->
+<input type="text" id="playerName" placeholder="Inserisci il tuo nome"> <!-- Campo testo per il nome -->
+
+<label for="favGame">Gioco preferito:</label> <!-- Etichetta per il gioco -->
+<input type="text" id="favGame" placeholder="Es. FIFA, GTA, Minecraft"> <!-- Campo testo per il gioco -->
+
+<label for="platform">Piattaforma:</label> <!-- Etichetta per la piattaforma -->
+<input type="text" id="platform" placeholder="Es. PC, PS5, Xbox"> <!-- Campo testo per la piattaforma -->
+
+<button type="button" id="saveBtn">Salva</button> <!-- Pulsante per salvare nel Local Storage -->
+<button type="button" id="clearBtn">Cancella</button> <!-- Pulsante per cancellare i dati -->
+<button type="button" id="themeBtn">Cambia tema</button> <!-- Pulsante per alternare tema chiaro/scuro -->
+    </form>
+</main>
+<!-- Il form raccoglie le informazioni che verranno salvate nel Local Storage. Ogni campo ha un id per essere facilmente 
+selezionato in JavaScript. -->
+
+
+<!-- BLOCCO3: Sezione di visualizzazione dati salvati -->
+<section id="savedProfile"> <!-- Area dedicata ai dati salvati -->
+    <h2>Profilo salvato</h2> <!-- Titolo della sezione -->
+    <div id="profileData"></div> <!-- Contenitore dove JS mostrerà i dati -->
+</section>
+<!-- Questa sezione mostra i dati recuperati dal Local Storage. È dinamica: il contenuto viene generato via JavaScript. -->
+
+
+<script src="script.js"></script> <!-- Collega il file JS che gestisce logica e interattività -->
+</body> <!-- Chiude il corpo del documento -->
+</html> <!-- Chiude l’intero documento HTML -->
+
+        <script src="giochi.js"></script>
+    </body>
+</html>
