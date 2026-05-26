@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Calcolatrice</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+    
+    <h1>Calcolatrice Semplice</h1>
+    <p>Inserisci due numeri e scegli un'operazione.</p>
+
+    <!-- Form base: NON funziona lato server, serve solo come esempio HTML -->
+    <form>
+        <input type="number" placeholder="Numero 1"> 
+        <input type="number" placeholder="Numero 2"> 
+
+        <select> <!-- Menu a tendina per scegliere l'operazione -->
+            <option>Somma</option>
+            <option>Sottrazione</option>
+            <option>Moltiplicazione</option>
+            <option>Divisione</option>
+        </select>
+
+        <button type="button">Calcola</button> <!-- Pulsante non collegato a JS -->
+    </form>
+
+
+    <!-- Link di navigazione -->
+    <p><a href="/?page=a">Torna alla Home</a></p>
+    <p><a href="/?page=b">Vai alla pagina Info</a></p>
+        <script src="server2.js" ></script>
+    </body>
+</html>
